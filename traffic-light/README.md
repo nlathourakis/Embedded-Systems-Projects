@@ -4,7 +4,7 @@ An Arduino traffic light that stays green for cars until a pedestrian presses a 
 
 This is the first project in my Arduino learning path toward a self-balancing robot.
 
-![Traffic light](traffic-light/traffic-light.jpg)
+![Traffic light](images/traffic-light.jpeg)
 
 ## Components
 
@@ -26,7 +26,7 @@ This is the first project in my Arduino learning path toward a self-balancing ro
 | 2 | Push button → GND (internal pull-up enabled) |
 | GND | Breadboard ground rail |
 
-![Wiring](images/wiring_top.jpg) <!-- TODO: add KiCad schematic -->
+![Wiring](images/traffic-light-schematic.svg)
 
 I used pins **without PWM** (no `~`) so the PWM pins stay free for later projects.
 
