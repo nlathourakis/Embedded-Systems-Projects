@@ -80,4 +80,4 @@ Because there is no `delay()`, `loop()` runs thousands of times per second and t
 
 ## Code
 
-See [`traffic-light/traffic-light.ino`](traffic-light/traffic-light.ino).
+See [`traffic-light/traffic-light.ino`](traffic-light.ino).
