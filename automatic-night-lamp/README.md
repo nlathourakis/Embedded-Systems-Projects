@@ -2,9 +2,9 @@
 
 An LED that turns on automatically when the room gets dark and gets brighter the darker it gets. A photoresistor senses the light level, the Arduino reads it through its ADC, and the LED brightness is controlled with PWM. A hysteresis band around the threshold keeps the lamp from flickering when the light level is close to the switching point.
 
-<!-- Demo video: drag and drop the video here in the GitHub editor -->
+![Photo](images/auto-night-lamp.jpeg)
 
-![Breadboard](images/auto-night-lamp.jpg)
+https://github.com/user-attachments/assets/f78ea2b2-fb29-4790-aeec-0bf9d277813f
 
 ## Components
 
@@ -36,7 +36,7 @@ An LED that turns on automatically when the room gets dark and gets brighter the
 The Arduino cannot measure resistance, only voltage. The LDR is placed in series with a fixed 10 kΩ resistor, and the voltage at the midpoint is:
 
 $$
-V_{out} = 5\,\text{V} \cdot \frac{R}{R_{LDR} + R}
+V_{out} = 5\ \text{V} \cdot \frac{R}{R_{LDR} + R}
 $$
 
 When it gets darker, $R_{LDR}$ increases and $V_{out}$ drops.
@@ -58,7 +58,7 @@ LDR resistance was first measured on its own with a multimeter. The divider volt
 The Uno has a 10-bit ADC that maps 0–5 V to an integer from 0 to 1023:
 
 $$
-V = \frac{\text{raw}}{1023} \cdot 5\,\text{V}
+V = \frac{\text{raw}}{1023} \cdot 5\ \text{V}
 $$
 
 Both the raw value and the voltage are printed to the Serial Monitor.
@@ -68,7 +68,7 @@ Both the raw value and the voltage are printed to the Serial Monitor.
 A digital pin can only output 0 V or 5 V. PWM switches the pin on and off very fast (≈ 490 Hz on pin 9), and the LED's perceived brightness follows the average voltage:
 
 $$
-V_{avg} = D \cdot 5\,\text{V}, \qquad D = \frac{\text{value}}{255}
+V_{avg} = D \cdot 5\ \text{V}, \qquad D = \frac{\text{value}}{255}
 $$
 
 PWM only works on the pins marked with `~` (3, 5, 6, 9, 10, 11).
@@ -96,8 +96,8 @@ The last brightness value is stored in a global variable, so the lamp "remembers
 ## Challenges and what I learned
 
 - The biggest challenge was figuring out the correct formula for the lamp's brightness control in order to have optimal results.
-- During this project I got to experiment with the Serial Monitor and with the serial functions such as 'Serial.print()' and 'Serial.begin()' and learned the correct syntax through the Arduino's official documentation website.
+- During this project I got to experiment with the Serial Monitor and with the serial functions such as `Serial.print()` and `Serial.begin()` and learned the correct syntax through the Arduino's official documentation website.
 
 ## My own addition
 
-- Through observation of the LED's behaviour when the brightness was really close to the threshold I noticed the unwanted flickering of the lamp. Quickly I realised that this is a very common problem among embedded circuits and the way to overcome this, is by implementing *hesteresis* to my circuit. This was not a big deal because with the use of a global variable I managed to keep track of the circuit's previous state and act according to the level of brightness. 
+- Through observation of the LED's behaviour when the brightness was really close to the threshold I noticed the unwanted flickering of the lamp. Quickly I realised that this is a very common problem among embedded circuits and the way to overcome this, is by implementing *hysteresis* to my circuit. This was not a big deal because with the use of a global variable I managed to keep track of the circuit's previous state and act according to the level of brightness. 
