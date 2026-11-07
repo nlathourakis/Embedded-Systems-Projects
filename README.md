@@ -14,7 +14,7 @@ and includes an energy-focused project: a solar tracker with power measurement.
 | # | Project | What I learned | Status |
 |---|---------|----------------|--------|
 | 1 | [Traffic Light with Pedestrian Button](./traffic-light) | Digital I/O, non-blocking timing with `millis()` | ✅ Done |
-| 2 | Automatic Night Lamp |  ADC, voltage dividers, PWM, threshold control with hysteresis  | ✅ Done |
+| 2 | [Automatic Night Lamp](./automatic-night-lamp) |  ADC, voltage dividers, PWM, threshold control with hysteresis  | ✅ Done |
 | 3 | Weather Station with LCD || ⏳ Planned |
 | 4 | Reaction-Time Game | | ⏳ Planned |
 | 5 | Ultrasonic Parking Sensor | | ⏳ Planned |
