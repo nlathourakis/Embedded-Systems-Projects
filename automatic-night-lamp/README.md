@@ -27,7 +27,7 @@ https://github.com/user-attachments/assets/f78ea2b2-fb29-4790-aeec-0bf9d277813f
 | Pin 9 (PWM ~) | 220 Ω resistor → LED anode (long leg) |
 | LED cathode (short leg) | GND |
 
-![Schematic](images/schematic.svg)
+![Schematic](images/auto-lamp-schematic.svg)
 
 ## How it works
 
